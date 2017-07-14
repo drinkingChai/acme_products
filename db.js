@@ -34,6 +34,15 @@ function get(id) {
   }
 }
 
+function del(id) {
+  for (var i = 0; i < productDb.length; i++) {
+    if (productDb[i].id === id) {
+      productDb.splice(i, 1);
+      return;
+    }
+  }
+}
+
 
 // test
 add('Anvil', 10);
@@ -44,5 +53,7 @@ console.log(productDb);
 module.exports = {
   all: all,
   add: add,
-  getTopRated: getTopRated
+  getTopRated: getTopRated,
+  get: get,
+  del: del
 }

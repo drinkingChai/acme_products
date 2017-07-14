@@ -14,24 +14,22 @@ router.get('/products', function(req, res) {
 })
 
 router.get('/products/:id', function(req, res) {
-  // format of get
-  // var id = req.params.id*1 //to convert it to int
-  // var product = db.get(id);
-  // res.render('product/' + id, { name: product.name, rating: product.rating });
+  res.render('product', { product: db.get(req.params.id*1) }); //to convert it to int
 })
 
 router.post('/products', function(req, res) {
-  // format of post
-  // var name = req.body.name, rating = req.body.rating
-  // db.add(name, rating);
-  // res.redirect('/');
+  var name = req.body.name, rating = req.body.rating*1
+  if (!name || !rating || Number.isNaN(rating)) {
+    res.render('error');
+    return;
+  }
+  db.add(name, rating);
+  res.redirect('/products');
 })
 
 router.delete('/products/:id', function(req, res) {
-  // format of delete
-  // var name = req.params.id
-  // db.delete(id);
-  // res.redirect('/');
+  db.del(req.params.id*1);
+  res.redirect('/products');
 })
 
 

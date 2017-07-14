@@ -6,9 +6,17 @@
   </head>
   <body>
 
+    <form class="" action="/products" method="POST">
+      <input type="text" name="name" placeholder="Product name">
+      <input type="text" name="rating" placeholder="Rating">
+      <input type="submit">
+      <!-- <button type="button">Add new</button> -->
+    </form>
+
     <h3>Browse our amazing products!</h3>
-    {% for item in allProducts -%}
-      {{ item.name }} {{ item.rating }}<br>
+    {% for product in allProducts -%}
+      <a href="products/{{ product.id }}">{{ product.name }}</a>
+      {{ product.rating }}<br>
     {%- endfor %}
 
   </body>

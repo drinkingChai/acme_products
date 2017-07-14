@@ -1,6 +1,7 @@
 const express = require('express');
 const swig = require('swig');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const routes = require('./routes/products');
 
 
@@ -15,8 +16,12 @@ swig.setDefaults({ cache: false });
 
 
 // middlewares
+// all middleware should be defined before routes!!!!
+app.use(bodyParser.urlencoded( { extended: false } ));
+// specify the key in the req that will override the method!
+// method override specs: original method will be stored in req.originalMethod
+app.use(methodOverride('_method'));
 app.use(routes);
-// app.use(bodyParser);
 
 
 
