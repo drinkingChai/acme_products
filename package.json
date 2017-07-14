@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/drinkingChai/acme_products#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "swig": "^1.4.2",
+    "method-override": "~2.3.9"
   }
 }

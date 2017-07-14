@@ -3,11 +3,11 @@ var router = express.Router();
 
 
 router.get('/', function(req, res) {
-  res.send('something');
+  res.render('index', { lol: 'is so cool' });
 })
 
 router.get('/products', function(req, res) {
-
+  res.render('productTemplate');
 })
 
 router.get('/products/:id', function(req, res) {
