@@ -6,5 +6,10 @@
   </head>
   <body>
 
+    <h3>Browse our amazing products!</h3>
+    {% for item in allProducts -%}
+      {{ item.name }} {{ item.rating }}<br>
+    {%- endfor %}
+
   </body>
 </html>

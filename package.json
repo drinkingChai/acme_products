@@ -20,7 +20,8 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "swig": "^1.4.2",
-    "method-override": "~2.3.9"
+    "lodash": "^4.17.4",
+    "method-override": "~2.3.9",
+    "swig": "^1.4.2"
   }
 }
