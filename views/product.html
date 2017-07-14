@@ -6,14 +6,16 @@
   </head>
   <body>
 
-    <a href="/products">All products</a>
-    <p>I can't stop this feeelinnn... deep inside of meeee!</p>
-    {{ product.name }}
-    {{ product.rating }}
-    <form class="" action="/products/{{ product.id }}?_method=DELETE" method="POST">
-      <!-- Method override command ?_method to override the method -->
-      <input type="submit" name="" value="Delete">
-    </form>
+    <div class="main">
+      <a href="/products">All products</a>
+      <p>I can't stop this feeelinnn... deep inside of meeee!</p>
+      {{ product.name }}
+      {{ product.rating }}
+      <form class="" action="/products/{{ product.id }}?_method=DELETE" method="POST">
+        <!-- Method override command ?_method to override the method -->
+        <input type="submit" name="" value="Delete">
+      </form>
+    </div>
 
   </body>
 </html>

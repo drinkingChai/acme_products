@@ -3,14 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Acme|PT+Serif:700" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
   </head>
   <body>
 
-    <h1>Check out our top product!</h1>
-    {{ product.name }}<br>
-    {{ product.rating }}
-    <a href="products/{{ product.id }}">View this product!</a>
-    <a href="products">View all products</a>
+    <!-- <h3>Tired of that</h3>
+    <h3>road runner, bunny, or duck</h3>
+    <h3>giving you the slip!??</h3> -->
+
+    <div class="flex-container">
+      <div class="card featured">
+        <h3>Our top product!</h3>
+        <h2>{{ product.name }}</h2>
+        <h2>Rating: {{ product.rating }}!</h2>
+        <br>
+        <a class='my-btn-default' href="products/{{ product.id }}">More!</a>
+        <a class='my-btn-default' href="products">View all products</a>
+      </div>
+    </div>
 
   </body>
 </html>

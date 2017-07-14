@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 
 router.get('/products', function(req, res) {
   // get all products
-  res.render('products', { allProducts: db.all() });
+  res.render('products', { allProducts: db.all(), topRated: db.getTopRated() });
 })
 
 router.get('/products/:id', function(req, res) {

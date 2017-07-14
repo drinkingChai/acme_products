@@ -10,12 +10,11 @@
       <input type="text" name="name" placeholder="Product name">
       <input type="text" name="rating" placeholder="Rating">
       <input type="submit">
-      <!-- <button type="button">Add new</button> -->
     </form>
 
     <h3>Browse our amazing products!</h3>
     {% for product in allProducts -%}
-      <a href="products/{{ product.id }}">{{ product.name }}</a>
+      <a href="products/{{ product.id }}">{{ product.name }}</a> {% if product.id === topRated.id %} ⭐ {% endif %}
       {{ product.rating }}<br>
     {%- endfor %}
 

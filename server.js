@@ -17,6 +17,14 @@ swig.setDefaults({ cache: false });
 
 // middlewares
 // all middleware should be defined before routes!!!!
+const path = require('path');
+var myStatic = function(myPath) { // rewrote this function for clarity on how static works
+  return function(req, res, next) {
+    res.sendFile(path.resolve(myPath + req.url), function(err) { if (err) next() })
+  };
+}
+
+app.use(myStatic('public'));
 app.use(bodyParser.urlencoded( { extended: false } ));
 // specify the key in the req that will override the method!
 // method override specs: original method will be stored in req.originalMethod
