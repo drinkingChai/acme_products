@@ -9,15 +9,19 @@
   </head>
   <body>
 
-    <div class="main">
-      <a href="/products">All products</a>
-      <p>I can't stop this feeelinnn... deep inside of meeee!</p>
-      {{ product.name }}
-      {{ product.rating }}
-      <form class="" action="/products/{{ product.id }}?_method=DELETE" method="POST">
-        <!-- Method override command ?_method to override the method -->
-        <input type="submit" name="" value="Delete">
-      </form>
+    <div class="title">
+      <h2 class="my-btn-default yellow"><a href="/products">All products</a></h2>
+    </div>
+
+    <div class="flex-container">
+      <div class="card normal">
+        <h4>{{ product.name }}</h4>
+        <h4>{{ product.rating }}</h4>
+        <form class="" action="/products/{{ product.id }}?_method=DELETE" method="POST">
+          <!-- Method override command ?_method to override the method -->
+          <input class="my-btn-default" type="submit" name="" value="Delete">
+        </form>
+      </div>
     </div>
 
   </body>

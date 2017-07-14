@@ -13,17 +13,17 @@
     <h2 class="title">Browse our amazing products!</h2>
 
     <div class="flex-container">
-      <form class="" action="/products" method="POST">
+      <form class="new-prod-form" action="/products" method="POST">
         <input type="text" name="name" placeholder="Product name">
         <input type="text" name="rating" placeholder="Rating">
-        <input type="submit">
+        <input class="my-btn-default" type="submit">
       </form>
 
       <div class="card-container">
         {% for product in allProducts -%}
-        <div class="card normal">
-          <a href="products/{{ product.id }}">{{ product.name }}</a> {% if product.id === topRated.id %} ⭐ {% endif %}
-          {{ product.rating }}<br>
+        <div {% if product.id === topRated.id %} class="card featured" {% else %} class="card normal" {% endif %} >
+          <h4><a class="my-btn-default" href="products/{{ product.id }}">{{ product.name }}</a></h4>
+          <h4 class="rating">{{ product.rating }}</h4>
         </div>
         {%- endfor %}
       </div>
