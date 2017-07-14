@@ -1,7 +1,7 @@
 const express = require('express');
 const swig = require('swig');
 // const bodyParser = require('body-parser');
-const routes = require('./routes');
+const routes = require('./routes/products');
 
 
 // app and configuration
