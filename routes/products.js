@@ -2,7 +2,6 @@ const express = require('express');
 const db = require('../db');
 var router = express.Router();
 
-
 router.get('/', function(req, res) {
   // get top product
   res.render('index', { product: db.getTopRated() });
@@ -31,6 +30,5 @@ router.delete('/products/:id', function(req, res) {
   db.del(req.params.id*1);
   res.redirect('/products');
 })
-
 
 module.exports = router;

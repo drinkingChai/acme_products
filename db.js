@@ -43,12 +43,9 @@ function del(id) {
   }
 }
 
-
 // test
 add('Anvil', 10);
 add('TNT', 50);
-
-console.log(productDb);
 
 module.exports = {
   all: all,

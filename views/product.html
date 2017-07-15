@@ -10,16 +10,16 @@
   <body>
 
     <div class="title">
-      <h2 class="my-btn-default yellow"><a href="/products">All products</a></h2>
+      <a href="/products"><h2 class="my-btn-default yellow">All products</h2></a>
     </div>
 
     <div class="flex-container">
       <div class="card normal">
         <h4>{{ product.name }}</h4>
         <h4>{{ product.rating }}</h4>
-        <form class="" action="/products/{{ product.id }}?_method=DELETE" method="POST">
+        <form class="delete-form" action="/products/{{ product.id }}?_method=DELETE" method="POST">
           <!-- Method override command ?_method to override the method -->
-          <input class="my-btn-default" type="submit" name="" value="Delete">
+          <input class="my-btn-default danger" type="submit" name="" value="Delete">
         </form>
       </div>
     </div>
